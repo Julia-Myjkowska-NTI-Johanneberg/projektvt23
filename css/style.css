@@ -1,1 +1,126 @@
-/* Denna fil skall innehålla din CSS kod */
+/*Comments will be use to explain certain classes, as to not lose the track of them for the later use.*/
+
+/*CSS - mostly the first page, might use these classes for other settings as well.*/
+html, body{ /*So the background of the page will always take the full-size of the screen*/
+    height: 100%;
+    margin: 0;
+}
+
+.main_body{
+    background-image: linear-gradient(to right, #536893, #e8675f);
+    height: 100%; 
+}
+
+.fixed_element{ /*Used it for the items that are having a fixed position on the screen, therefor such items will follow the user on the page without changing their position --> ex: the logo*/
+    position: fixed;
+    height: 175px;
+    width: 225px;
+}
+
+.text_scroll{
+    height: 20rem;
+    width: 30rem;
+    position: relative;
+    margin: 40px 10px 10px 300px;
+}
+
+.fixed_side-text{ /*Needs it for the vertical positioning of the text from the main page*/
+position: fixed;
+bottom: 10%;
+writing-mode: vertical-lr;
+text-orientation: sideways-right;
+transform: scale(-1, -1);
+font-family: 'Josefin Sans', sans-serif;
+}
+
+.title_main-page{
+   text-align:center;
+    size: 40%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*Css for the Burger button and animation*/
+.menu_button{   
+position: relative;
+display: flex;
+justify-content: right;
+align-items:center;
+width: 80px;
+height: 80px;
+cursor: pointer;
+transition: all .5s ease-in-out;
+}
+
+.menu_button_burger{
+width: 50px;
+height: 6px;
+background: black;
+border-radius: 5px;
+box-shadow: #f04d8e;
+transition: all .5s ease-in-out;
+}
+
+.menu_button_burger::before,
+.menu_button_burger::after{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: #f04d8e;
+    transition: all .5s ease-in-out;
+}
+
+.menu_button_burger::before{
+    transform: translateY(-16px);
+}
+.menu_button_burger::after{
+    transform: translateY(16px);
+}
+
+/*Actual Animation*/
+.menu_button.open .menu_button_burger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu_button.open .menu_button_burger::before{
+    transform: rotate(45deg) translate(35px, -35px); 
+}
+.menu_button.open .menu_button_burger::after{
+    transform: rotate(-45deg) translate(35px, 35px); 
+}
+/*Css for the Burger button and animation - ENDS HERE*/
+
+
+
+/*Setting for phone-screens adjustments:*/
+@media only screen and (max-width: 414px){
+    .fixed_element{
+        position: fixed;
+        height: 60px;
+        width: 90px;
+        margin: 20px 5px 5px 2.5px;
+
+}
+.fixed_side-text{ /*Needs it for the vertical positioning of the text from the main page*/
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+    transform: scale(-1, -1);
+    font-family: 'Josefin Sans', sans-serif;
+    text-size-adjust: 40%;
+}
+
+.menu_button_burger::before,
+.menu_button_burger::after, .menu_button_burger, .menu_button{
+    width: 40px;
+    height: 4px;
+    
+}
+.menu_button{
+    margin-top: 2.5rem;
+}
+
+}
