@@ -6,10 +6,25 @@ html, body{ /*So the background of the page will always take the full-size of th
     margin: 0;
 }
 
-.main_body{
-    background-image: linear-gradient(to right, #536893, #e8675f);
-    height: 100%; 
+/*background gradient-animation*/
+.main_body{ 
+    background: linear-gradient(45deg, #67D0DD, #9FE481, #F6E785, #FAAFA5, #DC95DD, #A885EE);
+    height: 100vh;
+    width: 100%;
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
 }
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 75%;
+    }
+} /*Background - finish*/
 
 .fixed_element{ /*Used it for the items that are having a fixed position on the screen, therefor such items will follow the user on the page without changing their position --> ex: the logo*/
     position: fixed;
@@ -39,6 +54,24 @@ font-family: 'Josefin Sans', sans-serif;
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.our_projects{
+    place-items: center;
+    text-align: center;
+    width: 100%;
+    font: 8vw system-ui, sans-serif;
+    font-weight: 900;
+    height: 150px;
+    color:white;
+    opacity: 45%;
+}
+.our_projects:hover{
+    opacity: 100%;
+    cursor: pointer;
+    background: 
+}
+
+
+/*----------------------------------------------------------------------*/
 /*Css for the Burger button and animation*/
 .menu_button{   
 position: relative;
@@ -93,10 +126,11 @@ transition: all .5s ease-in-out;
     transform: rotate(-45deg) translate(35px, 35px); 
 }
 /*Css for the Burger button and animation - ENDS HERE*/
+/*----------------------------------------------------------------------*/
 
 
-
-/*Setting for phone-screens adjustments:*/
+/*----------------------------------------------------------------------*/
+/*Settings for phone-screen adjustments:*/
 @media only screen and (max-width: 414px){
     .fixed_element{
         position: fixed;
@@ -124,3 +158,4 @@ transition: all .5s ease-in-out;
 }
 
 }
+/*----------------------------------------------------------------------*/
