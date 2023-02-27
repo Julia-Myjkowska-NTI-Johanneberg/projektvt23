@@ -4,12 +4,17 @@
 html, body{ /*So the background of the page will always take the full-size of the screen*/
     height: 100%;
     margin: 0;
+    background: #0c192c;
+}
+.container-fluid{ /*Even tho this class is take from the Boostrap Library, the background_bubbles class has a relative position, this left alone would make the website open from the bottom of the page, unwanted option so it needed an absolute value in order to open from the top*/
+    position:absolute;
 }
 
 /*background gradient-animation*/
+/* - try to see if there can be any better
 .main_body{ 
     background: linear-gradient(45deg, #67D0DD, #9FE481, #F6E785, #FAAFA5, #DC95DD, #A885EE);
-    height: 100vh;
+    height: 190vh;
     width: 100%;
     background-size: 300% 300%;
     animation: color 12s ease-in-out infinite;
@@ -25,6 +30,39 @@ html, body{ /*So the background of the page will always take the full-size of th
         background-position: 0 75%;
     }
 } /*Background - finish*/
+
+
+
+.background_bubbles{
+    position: relative;
+    display: flex;
+}
+.background_bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 999s linear infinite;
+    animation-duration: calc(120s / var(--i));
+}
+.background_bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+@keyframes animate {
+    0%{
+        transform: translateY(190vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
 
 .fixed_element{ /*Used it for the items that are having a fixed position on the screen, therefor such items will follow the user on the page without changing their position --> ex: the logo*/
     position: fixed;
@@ -46,12 +84,15 @@ writing-mode: vertical-lr;
 text-orientation: sideways-right;
 transform: scale(-1, -1);
 font-family: 'Josefin Sans', sans-serif;
+color:white;
 }
 
 .title_main-page{
    text-align:center;
     size: 40%;
     font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    position: relative;
 }
 
 .our_projects{
@@ -63,6 +104,7 @@ font-family: 'Josefin Sans', sans-serif;
     height: 150px;
     color:white;
     opacity: 45%;
+    position: relative;
 }
 .our_projects:hover{
     opacity: 100%;
@@ -87,7 +129,7 @@ transition: all .5s ease-in-out;
 .menu_button_burger{
 width: 50px;
 height: 6px;
-background: black;
+background: white;
 border-radius: 5px;
 box-shadow: #f04d8e;
 transition: all .5s ease-in-out;
@@ -99,7 +141,7 @@ transition: all .5s ease-in-out;
     position: absolute;
     width: 50px;
     height: 6px;
-    background: black;
+    background: white;
     border-radius: 5px;
     box-shadow: #f04d8e;
     transition: all .5s ease-in-out;
