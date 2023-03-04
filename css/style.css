@@ -121,18 +121,29 @@ color:white;
     height: 100px;
     margin-top: 100px;
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    backdrop-filter: blur(10px);
     opacity: 45%;
     position: relative;
+    transition: 0.5s ease-in-out;
 }
 .our_projects:hover{
     opacity: 100%;
     cursor: pointer;
-    background: 
+    transform: scale(1.4);
+    transition: 0.5s ease-in-out;
 }
+.background1 + body {
+    background-image: url("img\test-background.png");
+  }
 
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color:white;
+    transition: 0.5s;
+}
 
 
 /*----------------------------------------------------------------------*/
