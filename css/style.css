@@ -147,11 +147,6 @@ ul li a{
     transition: 0.5s;
 }
 
-.background-image1:hover{
-    background: url("/img/random_image1.jpg");
-    background-size: cover;
-}
-
 /*----------------------------------------------------------------------*/
 
 /*----------------------------------------------------------------------*/
