@@ -7,8 +7,7 @@ html, body{ /*So the background of the page will always take the full-size of th
     background-position: center center;
     height: 100vh;
     transition: background 1.5s ease-in-out;
-    background: #0c192c;
-    
+    background-color: #0c192c;
 }
 .container-fluid{ /*Even tho this class is take from the Boostrap Library, the background_bubbles class has a relative position, this left alone would make the website open from the bottom of the page, unwanted option so it needed an absolute value in order to open from the top*/
     position:absolute;
@@ -146,6 +145,8 @@ ul li a{
     color:white;
     transition: 0.5s;
 }
+
+
 
 /*----------------------------------------------------------------------*/
 
