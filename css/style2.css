@@ -1,70 +1,13 @@
-/*Comments will be use to explain certain classes, as to not lose the track of them for the later use.*/
-
 /*CSS - mostly the first page, might use these classes for other settings as well.*/
 html, body{ /*So the background of the page will always take the full-size of the screen*/
     height: 100%;
     transition: background 1.5s ease-in-out;
     background-color: #0c192c;
 }
-.background-image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: auto;
-    background-position: center center;
-    background-attachment: fixed; /* This makes the background image fixed relative to the viewport */
-  }
+
 .container-fluid{ /*Even tho this class is take from the Boostrap Library, the background_bubbles class has a relative position, this left alone would make the website open from the bottom of the page, unwanted option so it needed an absolute value in order to open from the top*/
     position:absolute;
 }
-
-
-.background_bubbles{
-    position: relative;
-    display: flex;
-}
-.background_bubbles span {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    background: #4fc3dc;
-    border-radius: 0; /* Change border-radius to 0 to make the shape a square */
-    box-shadow: 0 0 0 10px #4fc3dc44,
-    0 0 50px #4fc3dc,
-    0 0 100px #4fc3dc;
-    animation: animate 999s linear infinite;
-    animation-duration: calc(120s / var(--i));
-}
-.background_bubbles span::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8), #4fc3dc); /* Use a linear gradient to create the color tail */
-    border-radius: 0;
-}
-.background_bubbles span:nth-child(even){
-    background: #ff2d75;
-    box-shadow: 0 0 0 10px #ff2d7544,
-    0 0 50px #ff2d75,
-    0 0 100px #ff2d75;
-}
-.background_bubbles span:nth-child(even)::after {
-    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8), #ff2d75);
-}
-@keyframes animate {
-    0%{
-        transform: translateY(250vh) scale(0);
-        
-    }
-    100%{
-        transform: translateY(-10vh) scale(1);
-        
-    }
-}
-
 
 .fixed_element{ /*Used it for the items that are having a fixed position on the screen, therefor such items will follow the user on the page without changing their position --> ex: the logo*/
     position: fixed;
@@ -97,40 +40,8 @@ color:white;
     position: relative;
 }
 /*-------------------------------------------------------*/
-/*These classes are going to be used to define the projects found on the main page and their attributes.*/
-.our_projects{
-    text-align: center;
-    width: 35%;
-    margin: 0 auto;
-    font: 8vw system-ui, sans-serif;
-    font-weight: 900;
-    height: 100px;
-    margin-top: 100px;
-    color: #fff;
-    border-radius: 10px;
-    opacity: 45%;
-    position: relative;
-    transition: 0.5s ease-in-out;
-}
-.our_projects:hover{
-    opacity: 100%;
-    cursor: pointer;
-    transform: scale(1.4);
-    transition: 0.5s ease-in-out;
-}
 
-ul li{
-    list-style: none;
-}
-ul li a{
-    text-decoration: none;
-    color:white;
-    transition: 0.5s;
-}
-
-/*----------------------------------------------------------------------*/
-
-/*Menu*/
+/*Menu - stays on the other pages as well, will need the menu there*/
 .overlay {
     position: fixed;
     top: 0;
@@ -274,3 +185,156 @@ transition: all .5s ease-in-out;
 
 }
 /*----------------------------------------------------------------------*/
+
+/*Footer code ---------------------------*/
+
+  .footer-distributed{
+      background: #0c192c;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px sans-serif;
+      padding: 55px 50px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+      display: inline-block;
+      vertical-align: top;
+  }
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+      width: 30%;
+  }
+  
+  /* The company logo */
+  
+  .footer-distributed h3{
+      color:  #ffffff;
+      font: normal 36px 'Josefin Sans';
+      margin: 0;
+  }
+  
+  .footer-distributed h3 span{
+      color:  lightseagreen;
+  }
+
+  .footer-company-name{
+      color:  #ffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0 0 0 40px;
+  }
+  
+  /* Footer Center */
+  
+  .footer-distributed .footer-center{
+      width: 35%;
+  }
+  
+  .footer-distributed .footer-center i{
+      background-color:  #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+  }
+  
+  .footer-distributed .footer-center i.fa-envelope{
+      font-size: 17px;
+      line-height: 38px;
+  }
+  
+  .footer-distributed .footer-center p{
+      display: inline-block;
+      color: #ffffff;
+    font-weight:400;
+      vertical-align: middle;
+      margin:0;
+  }
+  
+  .footer-distributed .footer-center p span{
+      display:block;
+      font-weight: normal;
+      font-size:14px;
+      line-height:2;
+  }
+  
+
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+      width: 20%;
+  }
+  
+  .footer-distributed .footer-company-about{
+      line-height: 20px;
+      color:  #0c192c;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+      display: block;
+      color:  #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+  
+  .footer-distributed .footer-icons{
+      margin-top: 25px;
+  }
+  
+  .footer-distributed .footer-icons a{
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      background-color:  #0c192c;
+      border-radius: 2px;
+  
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+  
+      margin-right: 3px;
+      margin-bottom: 5px;
+  }
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+  
+  @media (max-width: 880px) {
+  
+      .footer-distributed{
+          font: bold 14px sans-serif;
+      }
+  
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-center,
+      .footer-distributed .footer-right{
+          display: block;
+          width: 100%;
+          margin-bottom: 40px;
+          text-align: center;
+      }
+  
+      .footer-distributed .footer-center i{
+          margin-left: 0;
+      }
+  
+  }
+  
+/*---------------------------*/
