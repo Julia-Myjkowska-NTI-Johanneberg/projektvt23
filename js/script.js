@@ -40,18 +40,39 @@ overlay.addEventListener('click', (event) => {
 
 //Script for background changer//
 
-const links = document.querySelectorAll('a');
-const body = document.querySelector('body');
-
-links.forEach(link => {
-  link.addEventListener('mouseenter', () => {
-    const imageUrl = link.dataset.imageUrl;
-    body.classList.add('background-image'); // Add the background-image class to the body element
-    body.style.backgroundImage = `url(${imageUrl})`;
-  });
-
-  link.addEventListener('mouseleave', () => {
-    body.classList.remove('background-image'); // Remove the background-image class from the body element
-    body.style.backgroundImage = 'none';
-  });
+Barba.init({
+  transitions: [{
+    name: 'fade',
+    leave(data) {
+      return gsap.to(data.current.container, {opacity: 0});
+    },
+    enter(data) {
+      return gsap.from(data.next.container, {opacity: 0});
+    }
+  }],
+  views: [{
+    namespace: 'home',
+    beforeEnter() {
+      document.body.style.backgroundImage = `url('path/to/home-image.jpg')`;
+    },
+    beforeLeave() {
+      document.body.style.backgroundImage = 'none';
+    }
+  }]
 });
+
+// Add the following code to change the body background image on hover of the links container
+
+const linksContainer = document.getElementById('links');
+linksContainer.addEventListener('mouseenter', (event) => {
+  const link = event.target.closest('a');
+  if (link) {
+    const className = link.classList[0]; // get the first class name of the link element
+    document.body.style.backgroundImage = `url('path/to/${className}-hover-image.jpg')`; // change the body background image
+  }
+});
+
+linksContainer.addEventListener('mouseleave', (event) => {
+  document.body.style.backgroundImage = `url('path/to/home-image.jpg')`; // reset the body background image
+});
+

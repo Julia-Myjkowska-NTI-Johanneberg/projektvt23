@@ -184,7 +184,25 @@ ul li a{
 }
 
 /*---*/
-
+.home {
+    background-image:none;
+  }
+  #links a {
+    background-image: none; /* remove the background image from all links */
+  }
+  
+  #links .link-1:hover {
+    background-image: url('img\random_image1.jpg');
+  }
+  
+  #links .link-2:hover {
+    background-image: url('img\random_image2.jpg');
+  }
+  
+  #links .link-3:hover {
+    background-image: url('img\random_image3.jpg');
+  }
+  
 /*----------------------------------------------------------------------*/
 /*Css for the Burger button and animation*/
 .menu_button{   
