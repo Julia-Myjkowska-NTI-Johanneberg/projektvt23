@@ -5,15 +5,9 @@ html, body{ /*So the background of the page will always take the full-size of th
     height: 100%;
     transition: background 1.5s ease-in-out;
     background-color: #0c192c;
+    background-image: none;
 }
-.background-image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: auto;
-    background-position: center center;
-    background-attachment: fixed; /* This makes the background image fixed relative to the viewport */
-  }
+
 .container-fluid{ /*Even tho this class is take from the Boostrap Library, the background_bubbles class has a relative position, this left alone would make the website open from the bottom of the page, unwanted option so it needed an absolute value in order to open from the top*/
     position:absolute;
 }
@@ -142,7 +136,10 @@ ul li a{
     justify-content: center;
     align-items: center;
     z-index: 1;
+
+   
 }
+
 
 .menu {
     position: absolute;
@@ -184,25 +181,37 @@ ul li a{
 }
 
 /*---*/
-.home {
-    background-image:none;
-  }
-  #links a {
-    background-image: none; /* remove the background image from all links */
-  }
-  
-  #links .link-1:hover {
-    background-image: url('img\random_image1.jpg');
-  }
-  
-  #links .link-2:hover {
-    background-image: url('img\random_image2.jpg');
-  }
-  
-  #links .link-3:hover {
-    background-image: url('img\random_image3.jpg');
-  }
-  
+
+/*Background Changer Attempt*/
+body {
+  margin: 0;
+}
+
+.image-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.link1:hover ~ .image-container .link1-image,
+.link2:hover ~ .image-container .link2-image,
+.link3:hover ~ .image-container .link3-image {
+  opacity: 1;
+}
+
+/*------------*/
+
 /*----------------------------------------------------------------------*/
 /*Css for the Burger button and animation*/
 .menu_button{   
