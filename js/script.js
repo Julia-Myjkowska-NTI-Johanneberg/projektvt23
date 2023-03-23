@@ -19,21 +19,26 @@ menuBtn.addEventListener('click', () => {
 //Uses btn2/menuOpen2 so the program will not confuse it with the function for only opening and closing the button <-> This code is for the menu ADD and REMOVE the overlay//
 menuBtn2.addEventListener('click', () => {
   if (!menuOpen2) {
-      menuBtn2.classList.add('open');
-      menuOpen2 = true;
-      overlay.style.display = 'flex';
+    menuBtn2.classList.add('open');
+    menuOpen2 = true;
+    overlay.classList.add('overlay');
+    overlay.style.display = 'flex';
   } else {
-      menuBtn2.classList.remove('open');
-      menuOpen2 = false;
-      overlay.style.display = 'none';
+    menuBtn2.classList.remove('open');
+    menuOpen2 = false;
+    overlay.classList.remove('overlay');
+    overlay.style.display = 'none';
   }
 });
 
 overlay.addEventListener('click', (event) => {
   if (event.target === overlay) {
-      menuBtn2.classList.remove('open');
-      menuOpen2 = false;
-      overlay.style.display = 'none';
+    menuBtn2.classList.remove('open');
+    menuOpen2 = false;
+    overlay.classList.remove('overlay');
+    overlay.style.display = 'none';
   }
 });
+
 //---------------------------//
+
