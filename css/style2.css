@@ -38,8 +38,22 @@ color:white;
     font-family: 'Josefin Sans', sans-serif;
     color: white;
     position: relative;
+    margin: 3rem 5rem 1rem 5rem;
+    
 }
 /*-------------------------------------------------------*/
+
+/*Content of the page*/
+.page-container{
+    width: 100%;
+    height: 1000px;
+    background-color: #fff;
+}
+.icons_order{
+    font-size: 100px;
+}
+/*---*/
+
 
 /*Menu - stays on the other pages as well, will need the menu there*/
 .overlay {
