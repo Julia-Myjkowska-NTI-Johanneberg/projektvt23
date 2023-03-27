@@ -129,29 +129,29 @@ iconDiv4.addEventListener("click", function() {
 
 // Icon Changer SUBClasse #2//
 //2-1//
-let iconDiv1_1 = document.getElementById("icon-div1_2");
-let icon1_1 = document.getElementById("icon1_2");
-let iconClass1_1 = document.getElementById("iconClass1_2");
-let isLiked1_1 = false;
+let iconDiv11 = document.getElementById("icon-div12");
+let icon11 = document.getElementById("icon12");
+let iconClass11 = document.getElementById("iconClass12");
+let isLiked11 = false;
 
-iconDiv1_1.addEventListener("click", function() {
-  if (isLiked1_1) {
-    icon1_1.classList.remove("bi-pencil");
-    icon1_1.classList.add("bi-check2-circle");
-    iconClass1_1.classList.add("icon_order_active")
-    isLiked1_1 = false;
+iconDiv11.addEventListener("click", function() {
+  if (isLiked11) {
+    icon11.classList.remove("bi-pencil");
+    icon11.classList.add("bi-check2-circle");
+    iconClass11.classList.add("icon_order_active")
+    isLiked11 = false;
   } else {
-    icon1_1.classList.remove("bi-check2-circle");
-    icon1_1.classList.add("bi-pencil");
-    iconClass1_1.classList.remove("icon_order_active")
-    iconClass1_1.classList.add("icon_order_deactive")
-    isLiked1_1 = true;
+    icon11.classList.remove("bi-check2-circle");
+    icon11.classList.add("bi-pencil");
+    iconClass11.classList.remove("icon_order_active")
+    iconClass11.classList.add("icon_order_deactive")
+    isLiked11 = true;
   }
 });
 //2-2//
-let iconDiv1_2 = document.getElementById("icon-div2_2");
-let icon1_2 = document.getElementById("icon2_2");
-let iconClass1_2 = document.getElementById("iconClass2_2");
+let iconDiv1_2 = document.getElementById("icon-div22");
+let icon1_2 = document.getElementById("icon22");
+let iconClass1_2 = document.getElementById("iconClass22");
 let isLiked1_2 = false;
 
 iconDiv1_2.addEventListener("click", function() {
@@ -169,9 +169,9 @@ iconDiv1_2.addEventListener("click", function() {
   }
 });
 //2-3//
-let iconDiv1_3 = document.getElementById("icon-div3_2");
-let icon1_3 = document.getElementById("icon3_2");
-let iconClass1_3 = document.getElementById("iconClass3_2");
+let iconDiv1_3 = document.getElementById("icon-div32");
+let icon1_3 = document.getElementById("icon32");
+let iconClass1_3 = document.getElementById("iconClass32");
 let isLiked1_3 = false;
 
 iconDiv1_3.addEventListener("click", function() {
