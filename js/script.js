@@ -230,3 +230,12 @@ sliderRangeTime.addEventListener('touchmove', () => {
 });
 
 //--------------------------------------//
+//Drop Down Button//
+const dropdownSelect = document.querySelector("#dropdown-select");
+const selectedOption = document.querySelector("#selected-option");
+
+dropdownSelect.addEventListener("change", () => {
+  selectedOption.innerText = dropdownSelect.value ? dropdownSelect.options[dropdownSelect.selectedIndex].text : "";
+});
+
+//-------------------------//
