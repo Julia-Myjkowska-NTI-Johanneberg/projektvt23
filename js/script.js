@@ -239,3 +239,13 @@ dropdownSelect.addEventListener("change", () => {
 });
 
 //-------------------------//
+
+//Parallax effect//
+const parallaxBg = document.querySelector('.parallax-bg');
+
+window.addEventListener('scroll', function() {
+  const offset = window.pageYOffset;
+  parallaxBg.style.transform = `translateY(-${offset * 0.5}px)`;
+});
+
+//----------------------------//
