@@ -45,13 +45,26 @@ html, body{ /*So the background of the page will always take the full-size of th
 }
 
 .loxindex-position{
-    position: relative;
+    position:relative;
+    background: none;
+    
 }
 .highindex-position{
-    position: absolute;
-    height: 200px;
-    width: 200px;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
+.floating-element {
+    position: fixed;
+    transform: translate(-10%, 0,-10%, 0);
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    z-index: -999;
+  }
+  
 /*-------------------------------------------------------*/
 
 /*Content of the page*/
@@ -61,6 +74,7 @@ html, body{ /*So the background of the page will always take the full-size of th
     background-color: #fff;
     padding:2rem 0 5rem 0;
     padding-top:2rem;
+    margin-bottom: 2rem;
 }
 .icon_order{
     height: 250px;
@@ -350,6 +364,8 @@ z-index: 2;
       text-align: left;
       font: bold 16px sans-serif;
       padding: 55px 50px;
+      position:absolute;
+      margin-top: 100%;
   }
   
   .footer-distributed .footer-left,

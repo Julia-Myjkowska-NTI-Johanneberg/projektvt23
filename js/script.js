@@ -249,3 +249,19 @@ window.addEventListener('scroll', function() {
 });
 
 //----------------------------//
+
+//Floating elements around the product pages//
+const floatingElement = document.querySelector('.floating-element');
+const windowHeight = window.innerHeight;
+const windowWidth = window.innerWidth;
+
+function handleScroll() {
+  const scrollPosition = window.scrollY;
+  const xPos = (scrollPosition / windowHeight) * windowWidth;
+  const yPos = scrollPosition;
+  floatingElement.style.transform = `translate(${xPos}px, ${yPos}px)`;
+}
+
+window.addEventListener('scroll', handleScroll);
+
+//--------------------//
