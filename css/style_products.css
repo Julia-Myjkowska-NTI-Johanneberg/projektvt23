@@ -1,34 +1,19 @@
 /*CSS - mostly the first page, might use these classes for other settings as well.*/
 html, body{ /*So the background of the page will always take the full-size of the screen*/
     height: 100%;
-
-}
-
-.parallax-section { /*Used for the nav parallax*/
-    position: relative;
-    height: 500px; 
-    overflow: hidden;
+    transition: background 1.5s ease-in-out;
+    background-color: #0c192c;
     margin: 0;
     padding: 0;
-  }
-  
-  .parallax-bg {
-    position: absolute;
+    scroll-behavior: smooth;
+}
 
-    width: 100%;
-    height: 100%;
-    background-image: url('img/ShawTEA/ShawTEA_background1.jpg');
-    background-size: cover;
-    background-position: center;
-    transform: translateZ(-1px) scale(2);
-  }
-  
 .container-fluid{ /*Even tho this class is take from the Boostrap Library, the background_bubbles class has a relative position, this left alone would make the website open from the bottom of the page, unwanted option so it needed an absolute value in order to open from the top*/
     position:absolute;
 }
 
 .fixed_element{ /*Used it for the items that are having a fixed position on the screen, therefor such items will follow the user on the page without changing their position --> ex: the logo*/
-    position:absolute;
+    position:fixed;
     height: 175px;
     width: 225px;
     z-index: 1;
@@ -40,31 +25,114 @@ html, body{ /*So the background of the page will always take the full-size of th
     font-family: 'Josefin Sans', sans-serif;
     color: white;
     position: relative;
-    margin: 3rem 5rem 2rem 5rem;
-    
+    margin: 3rem 5rem 1rem 5rem;   
+}
+.text_page{
+  margin: 1rem 10rem 0 10rem;
 }
 
-.loxindex-position{
-    position:relative;
-    background: none;
-    
-}
-.highindex-position{
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-.floating-element {
-    position: fixed;
-    transform: translate(-10%, 0,-10%, 0);
-    background-color: transparent;
-    width: auto;
-    height: auto;
-    z-index: -999;
+
+/*Cool animated waves for the about pages*/  
+  h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight:300;
+    letter-spacing: 2px;
+    font-size:48px;
+  }
+  p {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    font-size:14px;
+    color: #333333;
   }
   
+  .header {
+    position:relative;
+    text-align:center;
+    color:white;
+  }
+  .logo {
+    width:50px;
+    fill:white;
+    padding-right:15px;
+    display:inline-block;
+    vertical-align: middle;
+  }
+  
+  .inner-header {
+    height:65vh;
+    width:100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .flex { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px;
+    min-height:100px;
+    max-height:150px;
+  }
+  
+  .content {
+    position:relative;
+    height:20vh;
+    text-align:center;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Animation  background */
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+    h1 {
+      font-size:24px;
+    }
+  }
 /*-------------------------------------------------------*/
 
 /*Content of the page*/
@@ -72,9 +140,7 @@ html, body{ /*So the background of the page will always take the full-size of th
     width: 100%;
     height: auto;
     background-color: #fff;
-    padding:2rem 0 5rem 0;
-    padding-top:2rem;
-    margin-bottom: 2rem;
+    padding: 0;
 }
 .icon_order{
     height: 250px;
@@ -137,56 +203,6 @@ html, body{ /*So the background of the page will always take the full-size of th
     font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
     padding: 20px;
-}
-
-  /*Design for the iput fields*/
-  input[type="text"] {
-    border: 50% solid #ccc;
-    padding: 5px;
-    font-size: 16px;
-    margin: 1rem;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    width: 300px;
-  }
-  
-  input[type="text"]::placeholder {
-    color: #ccc;
-    font-style: italic;
-  }
-  input:focus::placeholder {
-    color: transparent;
-  }
-.imput_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7px;
-    height: auto;
-    width: auto;
-}
-
-.container_contact{
-    background-color: #c2c0c0;
-    border-radius: 20%;
-}
-#dropdown-select {
-  width: 630px;
-  height: 50px;
-  font-size: 20px;
-  border: none;
-}
-
-#selected-option {
-  margin-top: 10px;
-}
-
-.contact_container{
-  width: auto;
-  height: auto;
-  margin: 3rem;
-  background-color: #e3e9ec;
-  border-radius: 5%;
 }
 
 /*Menu*/
@@ -282,6 +298,8 @@ height: 80px;
 cursor: pointer;
 transition: all .5s ease-in-out;
 z-index: 2;
+margin-right: 1rem;
+margin-top: 2rem;
 }
 
 .menu_button_burger{
@@ -291,8 +309,10 @@ background: black;
 border-radius: 5px;
 box-shadow: #f04d8e;
 transition: all .5s ease-in-out;
-z-index: 2;
+margin-right: 1rem;
+margin-top: 2rem;
 }
+
 
 .menu_button_burger::before,
 .menu_button_burger::after{
@@ -309,6 +329,7 @@ z-index: 2;
 .menu_button_burger::before{
     transform: translateY(-16px);
 }
+
 .menu_button_burger::after{
     transform: translateY(16px);
 }
@@ -321,38 +342,362 @@ z-index: 2;
 }
 
 .menu_button.open .menu_button_burger::before{
-    transform: rotate(45deg) translate(35px, -35px); 
+    transform: rotate(45deg) translate(35px, -35px);
+    background: white; 
 }
 .menu_button.open .menu_button_burger::after{
-    transform: rotate(-45deg) translate(35px, 35px); 
+    transform: rotate(-45deg) translate(35px, 35px);
+    background: white;  
 }
-
 /*Css for the Burger button and animation - ENDS HERE*/
 /*----------------------------------------------------------------------*/
+/*Cards for the icons*/
+.lordicon-icons{
+  width: 250px;
+  height: 250px;
+  z-index: 2;
+}
+article {
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: transparent;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  text-align: center;
+}
+.article-wrapper{
+  text-align: center;
+}
 
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+
+}
+
+figure {
+  margin: 2rem 0 0 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  text-align: center;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+
+
+
+.articles {
+  display: grid;
+  max-width: 4000px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+
+  .article-body p {
+    font-size: 16px;
+  }
+  .article-body h2 {
+    display: none;
+  }
+  .lordicon-icons{
+    width: 100px;
+    height: 100px;
+  }
+  .article-wrapper{
+    text-align: left;
+  }
+  .center-card{
+    text-align: left;
+  }
+}
+
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
 
 /*----------------------------------------------------------------------*/
-/*Settings for phone-screen adjustments:*/
-@media only screen and (max-width: 414px){
-    .fixed_element{
-        position: fixed;
-        height: 60px;
-        width: 90px;
-        margin: 20px 5px 5px 2.5px;
 
-}
-.menu_button_burger::before,
-.menu_button_burger::after, .menu_button_burger, .menu_button{
-    width: 40px;
-    height: 4px;
-    
-}
-.menu_button{
-    margin-top: 1.5rem;
+/*Code for the webpages display - label format*/
+
+
+h3{
+  font-weight: 300;
+  font-size: 25px;
 }
 
+h4{
+  font-size: 18px;
+  font-weight: 300;
 }
-/*----------------------------------------------------------------------*/
+
+.card.card-carousel {
+  border: 0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 6px ;
+  color: rgba(0,0,0,.87);
+  background: #fff;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.card.card-carousel img{
+  border-radius: 6px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+
+.carousel .carousel-indicators {
+  bottom: 5px;
+}
+
+.carousel .carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  text-indent: -999px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+  border-radius: 2px;
+}
+
+.carousel .carousel-indicators .active{
+  margin: 11px 10px; 
+} 
+
+.carousel .carousel-indicators li {
+  margin: 11px 10px;
+}
+
+.carousel .carousel-indicators .active {
+  margin-top: 10px;
+  transform: scale(1.5);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  align-items: center;
+  width: 100%;
+  transition: transform .6s ease;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel .carousel-caption {
+  padding-bottom: 45px;
+}
+
+.carousel .carousel-caption .material-icons {
+  position: relative;
+  top: 5px;
+}
+
+.carousel .carousel-control-next .material-icons{
+  z-index: 5;
+  display: inline-block;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  margin: auto;
+}
+
+.carousel .carousel-control-prev .material-icons {
+  z-index: 5;
+  display: inline-block;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  margin: auto;
+}
+
+/*-------------------*/
+
+/*Code for the people working on the page*/
+.card-people img{
+  height:auto;
+  width:100%;
+}
+
+div [class^="col-"]{
+  padding-left:5px;
+  padding-right:5px;
+}
+.card-people{
+  transition:0.5s;
+  cursor:pointer;
+}
+.card-title{  
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+}
+.card-title i{  
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+  color:#ffa710
+}
+.card-title i:hover{
+  transform: scale(1.25) rotate(100deg); 
+  color:#18d4ca;
+  
+}
+.card-people:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+.card-text{
+  height:80px;  
+}
+
+.card-people::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card-people::before {
+  transform-origin: left top;
+}
+.card-people::after {
+  transform-origin: right bottom;
+}
+.card-people:hover::before, .card:hover::after, .card:focus::before, .card-people:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+/*---------------------*/
+
+/*Code for the item gallery*/
+.item_showcase{
+  width: auto;
+  height: 500px;
+  background-color: #4eb338;
+}
+
+.item_showcase-bigimg{
+  position: absolute;
+  min-width: 200px;
+  max-width: 400px;
+  min-height: 200px;
+  max-height: 400px;
+  top: 20%;
+  left: 20%;
+}
+
+.item_showcase-smallimg{
+  position: fixed;
+  min-width: 100px;
+  max-width: 200px;
+  min-height: 100px;
+  max-height: 200px;
+  top: 40%;
+  left: 40%;
+}
+
+.item_showcase_text{
+  width: auto;
+  height: 400px;
+  text-align: center;
+  background-color: #ffa710;
+}
+/*---------------*/
+
+/*Code for the Items display - rotation flashcards*/
+
+/*---------------------*/
 
 /*Footer code ---------------------------*/
 
@@ -364,8 +709,6 @@ z-index: 2;
       text-align: left;
       font: bold 16px sans-serif;
       padding: 55px 50px;
-      position:absolute;
-      margin-top: 100%;
   }
   
   .footer-distributed .footer-left,
@@ -464,7 +807,7 @@ z-index: 2;
   }
   
   .footer-distributed .footer-icons{
-      margin-top: 25px;
+      margin-top: 50px;
   }
   
   .footer-distributed .footer-icons a{
@@ -484,17 +827,17 @@ z-index: 2;
       margin-bottom: 5px;
   }
   
-  /* If you don't want the footer to be responsive, remove these media queries */
-  
+
   /*Settings for phone-screen adjustments:*/
 @media only screen and (max-width: 414px){
     .fixed_element{
-        position: absolute;
-        height: 60px;
-        width: 90px;
+        position: fixed;
+        height: 80px;
+        width: 120px;
         margin: 20px 5px 5px 2.5px;
 
 }
+
 .menu_button_burger::before,
 .menu_button_burger::after, .menu_button_burger, .menu_button{
     width: 40px;
@@ -502,11 +845,11 @@ z-index: 2;
     
 }
 .menu_button{
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 
-}
 
+}
 
   @media (max-width: 880px) {
   
@@ -544,48 +887,28 @@ z-index: 2;
       .icon_center{
         margin-top: -5px;
       }
+      .text_page{
+        margin: 2rem 1rem 0 1rem;
+      }
       .fixed_element{
         width: 100px;
         height: 85px;
-        position: absolute;
+        position: fixed;
       }
       .menu_button{
         width: 60px;
         height: 60px;
       }
-    .slider{
-        width: 250px;
-    }
-    input[type="text"] {
-        width: 120px;
-    }
-    input[type="text"]::placeholder {
-        font-size: 10px;
+      .lordicon-icons{
+        width: 150px;
+        height: 150px;
       }
-      #dropdown-select {
-        width: 250px;
-        font-size: 10px;
-      }
-    .title_main-page{
-        margin: 3rem 5rem 1rem 2rem;
-    }
-    .contact_container{
-        margin: 5px;
-    }
-    .imput_container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 7px;
-        height: auto;
+      .card{
         width: auto;
-    }
-    .menu_button{
-        margin-top: -5rem;
-    }
-    .parallax-section{
         height: 300px;
-    }
+        margin-left: 5px;
+        margin-right: 5px;
+      }
   
   }
   
