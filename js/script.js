@@ -250,6 +250,6 @@ window.addEventListener('scroll', function() {
 
 //----------------------------//
 
-////
+//Rotating Slider//
 
 //--------------------//

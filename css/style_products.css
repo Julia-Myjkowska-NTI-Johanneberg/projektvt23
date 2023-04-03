@@ -32,6 +32,22 @@ html, body{ /*So the background of the page will always take the full-size of th
 }
 
 
+.backgroundimage_headline_product{
+  height: auto;
+  width: 90%;
+  justify-content: center;
+  margin-left:1rem;
+  border-radius: 5%;
+}
+.backgroundgif_headline_product{
+  height: auto;
+  width: 90%;
+  justify-content: center;
+  margin-left:1rem;
+  border-radius: 5%;
+}
+
+
 /*Cool animated waves for the about pages*/  
   h1 {
     font-family: 'Lato', sans-serif;
@@ -598,6 +614,10 @@ h4{
 }
 
 /*-------------------*/
+
+/*Rotating Slider*/
+
+/*----------------*/
 
 /*Code for the people working on the page*/
 .card-people img{
