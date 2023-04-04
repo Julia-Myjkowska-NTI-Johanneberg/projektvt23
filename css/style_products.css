@@ -31,7 +31,6 @@ html, body{ /*So the background of the page will always take the full-size of th
   margin: 1rem 10rem 0 10rem;
 }
 
-
 .backgroundimage_headline_product{
   height: auto;
   width: 90%;
@@ -468,6 +467,16 @@ article a .icon {
   }
   .center-card{
     text-align: left;
+  }
+  .articles{
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: transparent;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    text-align: center;
   }
 }
 
@@ -929,6 +938,7 @@ div [class^="col-"]{
         margin-left: 5px;
         margin-right: 5px;
       }
+      
   
   }
   

@@ -22,6 +22,9 @@ html, body{ /*So the background of the page will always take the full-size of th
     position: relative;
     margin: 40px 10px 10px 300px;
 }
+.text_page{
+  margin: 1rem 10rem 0 10rem;
+}
 
 .fixed_side-text{ /*Needs it for the vertical positioning of the text from the main page*/
 position: fixed;
@@ -174,6 +177,7 @@ color:white;
     padding: 7px;
     height: auto;
     width: auto;
+
 }
 
 .container_contact{
@@ -659,6 +663,9 @@ transition: all .5s ease-in-out;
     }
     input[type="text"] {
         width: 165px;
+    }
+    .text_page{
+      margin: 2rem 1rem 0 1rem;
     }
   
   }

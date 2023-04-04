@@ -94,7 +94,6 @@ color:white;
 /*These classes are going to be used to define the projects found on the main page and their attributes.*/
 .our_projects{
     text-align: center;
-    width: 35%;
     margin: 0 auto;
     font: 8vw system-ui, sans-serif;
     font-weight: 900;
@@ -291,6 +290,8 @@ transition: all .5s ease-in-out;
 .menu_button{
     margin-top: 2.5rem;
 }
-
+.our_projects{
+    margin-top: 0;
+}
 }
 /*----------------------------------------------------------------------*/
